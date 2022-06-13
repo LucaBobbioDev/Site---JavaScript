@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="img">
+            <img src="../images/jslogo.png" alt="Image with a yellow background-color and the letters J and S" width="90px">
+        </div>
+        <nav id="menu">
+            <strong>
+            <a href="/index.html">Home</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="variaveis.html">Variáveis</a>
+            <a href="dados.html">Dados</a>
+            <a href="operadores.html">Operadores</a>
+            <a href="function.html">Funções</a>
+            <a href="arrays.html">Arrays</a>
+            <a href="dom.html">DOM</a>
+            <a href="frame.html">Frameworks</a>
+            <a href=".sobre.html">Sobre</a>
+            </strong>
+        </nav>
+    </header>
+    <section>
+        <h2>Tipos de Dados em JavaScript</h2>
+        <p>
+            Os tipos em JavaScript podem ser divididos em duas categorias. Os tipos primitivos e os tipos de objeto. Os tipo primitivos incluem números, strings e valores booleanos. Qualquer valor em JavaScript que não seja número, string, booleano, null ou undefined é um objeto.
+        </p>
+            <ol>
+                <p>
+                <li><strong>Number:</strong> JavaScript não faz distinção entre valores inteiros e valores em ponto flutuante. Todos os números em JavaScript são representados como valores em ponto flutuante;</li>
+                <li><strong>String:</strong> São valores do tipo texto. Para incluir uma string literal em um programa JavaScript, basta colocar os caracteres da string dentro de um par combinado de aspas simples ou duplas;</li>
+                <li><strong>Boolean:</strong> Possuem dois tipos de valores TRUE e FALSE;</li>
+                <li><strong>Array:</strong> Em JavaScript, arrays são um tipo especial de objeto que representam um conjunto ordenado de valores numerados;</li>
+                <li><strong>Null & Undefined:</strong>: Null é falta de valor (vazio) Undefined é quando tenta acessar uma variavel que não tem valor definido;</li>
+                <li><strong>Object:</strong> Um objeto em JavaScript é um conjunto não ordenado de valores nomeados. Existem objetos vazios e objetos com propriedades (variaveis);</li>
+                <li><strong>Function:</strong> Sequencias de operações que irão ser executadas. Para executar uma função é necessário chama-la com parênteses. As funções podem ser vazias ou também receber valores que podem acessar. Return é um comando de uma função onde é retornado um valor.</li>
+                </p>
+            </ol>
+        <p>
+            Se um programa espera uma string, por exemplo, e você fornece um número, ele converte o número em string automaticamente. Se você usa um valor não booleano onde é esperado um booleano, JavaScript converte adequadamente. <br>
+            Para saber qual o tipo exato de uma variavel é necessário usar o operador unário typeof.
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variaveis <br>
+                var nome = "José"; <br>
+                var n = 123; <br>
+                <br>
+                //Usando operador typeof para saber o tipo de dado <br>
+                typeof "José"; //string <br>
+                typerof 123; //number
+            </code>
+        </div>
+    </section>
+    <footer id="r1">
+        <p>Copyright &copy; 2022 - by <a id="f" href="https://web.facebook.com/Luca.bobbio.1/" target="blank"><b>Luca Bobbio</b></a> | <a id="f" href="https://github.com/LucaBobbioDev" target="blank">GitHub</a></p> 
+    </footer>
+</body>
+</html>

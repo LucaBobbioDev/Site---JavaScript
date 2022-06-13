@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="img">
+            <img src="../images/jslogo.png" alt="Image with a yellow background-color and the letters J and S" width="90px">
+        </div>
+        <nav id="menu">
+            <strong>
+            <a href="/index.html">Home</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="variaveis.html">Variáveis</a>
+            <a href="dados.html">Dados</a>
+            <a href="operadores.html">Operadores</a>
+            <a href="function.html">Funções</a>
+            <a href="arrays.html">Arrays</a>
+            <a href="dom.html">DOM</a>
+            <a href="frame.html">Frameworks</a>
+            <a href="sobre.html">Sobre</a>
+            </strong>
+        </nav>
+    </header>
+    <section>
+        <h2>Entendendo os operadores em JavaScript</h2>
+        <p>
+            O JavaScript possui tanto operadores binários quanto unários e um operador ternário, o operador condicional. Um operador binário exige dois operandos, um antes do operador e outro depois.
+            <br>
+            Por exemplo, 3+4 ou x*y.
+        </p>
+        <p>
+            Um operador unário exige um único operando, seja antes ou depois do operador.
+            <br>
+            Por exemplo, x++ ou ++x.
+        </p>
+        <h3>Operadores Aritiméticos:</h3>
+        <p>
+            Operadores aritméticos tomam valores numéricos (sejam literais ou variáveis) como seus operandos e retornam um único valor númerico. Os operadores aritméticos padrão são os de <strong>soma (+), subtração (-), multiplicação (*) e divisão (/).</strong>
+        </p>
+        <div id="a">
+            <code>
+                console.log(1/2); //Usando o operador de divisão, o resultado é 0.5 <br>
+                console.log(5+5);//Usando o operador de soma, o resultado é 10
+            </code>
+        </div>
+        <p>
+            Em JavaScript para se realizar uma exponenciação se usa (**). Calcula a base elevada á potência do expoente, que é, base expoente.
+        </p>
+        <div id="a">
+            <img src="../images/opAT.jpg"/>
+        </div>
+        <h3>Operadores de Incremento e Decremento:</h3>
+        <p>
+            O incremento (++) é um operador unário. Adiciona um ao seu operando. Se usado como operador prefixado (++x), retorna o valor de seu operando após a adição. Se usado como operador pósfixado (x++), retorna o valor de seu operando antes da adição. Se x é 3, então ++x define x como 4 e retorna 4, enquanto x++ retorna 3 e, somente então, define x como 4.
+        </p>
+        <p>
+            Já o decremento(--) subtrai um de seu operando. O valor de retorno é análogo àquele do operador de incremento. Se x é 3, então --x define x como 2 e retorna 2, enquanto x-- retorna 3 e, somente então, define x como 2.
+            <br>
+            Há também o operador unário de negação. Ele retorna a negação de seu operando. Se x é 3, então -x retorna -3.
+        </p>
+        <h3>Operadores de Atribuição:</h3>
+        <p>
+            Operadores de atribuição são os que atribuem um valor à uma variável. Nós já usamos o básico, =, muitas vezes, simplesmente atribuindo à variável do lado esquerdo o valor indicado do lado direito do operador.
+        </p>
+        <div id="a">
+            <code>
+                var x = 3; //x contém o valor 3 <br>
+                var y = 4; //y contém o valor 4 <br> <br>
+                x = y; //x agora contém o mesmo valor de y, 4
+            </code>
+        </div>
+        <p>Mas existem alguns tipos mais complexos, que fornecem atalhos úteis para manter seu código mais puro e mais eficiente.</p>
+        <div id="a">
+            <img src="../images/opAB.jpg"/>
+        </div>
+        <h3>Operadores de comparação:</h3>
+        <p>
+            Um operador de comparação compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira. Os operandos podem ser numéricos, strings, lógicos ou objetos.
+        </p>
+        <p>
+            Na maioria dos casos, se dois operandos não são do mesmo tipo, o JavaScript tenta convertê-los para um tipo apropriado. Isto geralmente resulta na realização de uma comparação numérica. As únicas exceções a esta regra são os operadores === e o !==, que realizam comparações de igualdade e desigualdade "estritas".
+        </p>
+        <div id="a">
+            <img src="../images/opC.jpg"/>
+        </div>
+        <h3>Operadores de String:</h3>
+        <p>
+            Além dos operadores de comparação, que podem ser utilizados em valores string, o operador de concatenação (+) concatena dois valores string, retornando outra string que é a união dos dois operandos.
+        </p>
+        <div id="a">
+            <code>
+                console.log("minha " + "string"); // exibe a string "minha string".
+            </code>
+        </div>
+        <p>
+            O operador de atribuição encurtado += também pode ser utilizado para concatenar strings.
+        </p>
+        <div id="a">
+            <code>
+                var minhaString = "alfa"; <br>
+                minhaString += "beto"; // É avaliada como "alfabeto" e atribui este valor a variavel minhaString.
+            </code>
+        </div>
+        <h3>Operadores Lógicos:</h3>
+        <p>
+            Os operadores lógicos entram quando precisamos realizar operações sobre um ou dois valores booleano (verdadeiro ou falso). Elas podem ser do tipo AND, OR e NOT.
+            <br>
+            O operador lógico <b>NOT</b> (!) retorna true se o valor for false e retorna false se o valor for true, ou seja, vai retornar o valor contrário.
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis<br>
+                let vdd = true; <br>
+                let fls = false; <br>
+                <br>
+                console.log(!vdd);//resultado será false <br>
+                console.log(!fls);//resultado será true
+            </code>
+        </div>
+        <p>
+            Quando você aplica o operador ! para um valor que não é booleano, o operador ! primeiro converte o valor em um valor booleano (true ou false) e então negativa ele (torna ele o contrário).
+        </p>
+        <p>
+            O operador <b>AND</b> (&&) recebe dois operandos e retorna verdadeiro se, e somente se ambos os operandos sejam verdadeiros. Retorna falso, caso contrário. 
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis<br>
+                let vdd = true; <br>
+                let fls = false; <br>
+                <br>
+                console.log(vdd && fls);//resultado será false <br>
+                <br>
+                //atribuindo um novo valor para fls <br>
+                fls = true; <br>
+                console.log(vdd && fls);//agora o resultado será true
+            </code>
+        </div>
+        <p>
+            Já para o operador <b>OR</b> ( || ) retornar verdadeiro, basta que um dos operandos seja verdadeiro. Ele também retorna verdadeiro caso os dois operandos sejam verdadeiros. Retorna falso, se os dois forem falsos. 
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis<br>
+                let vdd = true; <br>
+                let fls = false; <br>
+                <br>
+                console.log(vdd || fls);//resultado será true <br>
+                <br>
+                //atribuindo um novo valor para vdd <br>
+                vdd = false; <br>
+                console.log(vdd || fls);//o resultado agora será false
+            </code>
+        </div>
+        <h3>Operador codicional (ternário):</h3>
+        <p>
+            Operador ternário JavaScript é uma contração de um operador de atribuição e duas expressões lógicas. No operador ternário, antes da interrogação (?) deve vir uma expressão lógica. A expressão antes dos dois pontos (:) será o resultado do operador, caso a expressão lógica seja verdadeira. A expressão depois dos dois pontos será o resultado caso ela seja falsa.
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis<br>
+                let precoCompra = 200; <br>
+                let desconto = 0.1; <br>
+                let precoFinal = 0; <br>
+                <br>
+                //Se precoCompra for maior que 100 então precoFinal receberá precoCompra alterado com desconto, senão receberá precoCompra com valor inalterado<br>
+                precoFinal = precoCompra>100? precoCompra-(precoCompra*desconto):precoCompra; <br>
+                <br>
+                console.log(precoFinal)//exibirá o resultado 180 <br>
+                <br>
+                //Atribuindo um novo valor para precoCompra <br>
+                precoCompra = 100; <br>
+                precoFinal = precoCompra>100? precoCompra-(precoCompra*desconto):precoCompra; <br>
+                <br>
+                console.log(precoFinal)//exibirá o resultado 100, pois precoCompra não é maior que 100
+            </code>
+        </div>
+        <h3>Operadores Relacionais:</h3>
+        <p>
+            Um operador relacional compara seus operando e retorna um valor booleano baseado em se a comparação é verdadeira. O operador in é usado para definir se um objeto tem uma determinada propriedade. Ele retorna os valores true ou false.
+        </p>
+        <div id="a">
+            <code>
+                //Arrays <br>
+                let num = [1, 2, 3, 4, 5]; <br>
+                <br>
+                //Usando o operador in <br>
+                1 in num // retorna true. 
+            </code>
+        </div>
+        <p>
+            Na expressão acima, o JavaScript retornará verdadeiro, pois 1 pertence ao array num. Porém se fosse 6 in num, ele retornaria false.
+        </p>
+    </section>
+    <footer id="r1">
+        <p>Copyright &copy; 2022 - by <a id="f" href="https://web.facebook.com/Luca.bobbio.1/" target="blank"><b>Luca Bobbio</b></a> | <a id="f" href="https://github.com/LucaBobbioDev" target="blank">GitHub</a></p> 
+    </footer>
+</body>
+</html>

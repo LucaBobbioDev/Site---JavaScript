@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="img">
+            <img src="../images/jslogo.png" alt="Image with a yellow background-color and the letters J and S" width="90px">
+        </div>
+        <nav id="menu">
+            <strong>
+            <a href="/index.html">Home</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="variaveis.html">Variáveis</a>
+            <a href="dados.html">Dados</a>
+            <a href="operadores.html">Operadores</a>
+            <a href="function.html">Funções</a>
+            <a href="arrays.html">Arrays</a>
+            <a href="dom.html">DOM</a>
+            <a href="frame.html">Frameworks</a>
+            <a href=".sobre.html">Sobre</a>
+            </strong>
+        </nav>
+    </header>
+    <section>
+        <h2>Entendendo as diferenças entre var, let e const:</h2>
+        <p>
+            Antes do advento do ES6, as declarações de var eram a regra. Entretanto, com o var existiam alguns problemas na hora das definições. Um dos recursos que surgiu com o ES6 foi a adoção de let e const, que podem ser usados para a declaração de variáveis.
+        </p>
+        <div id="var">
+            <h3>Var</h3>
+                <p>
+                    Declarações com var tem escopo global ou escopo de função/local. Isso significa que qualquer variável que seja declarada com var fora de um bloco de função pode ser utilizada na janela inteira. Tudo o que estiver cercado por chaves é um bloco.
+                </p>
+                <div id="a">
+                    <code>
+                        //Escopo global <br>
+                        var tester = "hey hi";<br> <br>
+                
+                        function newFunction() { <br>
+                        //Escopo de função<br>
+                            var hello = "hello";<br>
+                        }<br>
+                        console.log(hello); // erro: hello não está definido
+                    </code>
+                </div>
+                <p>
+                    Variáveis de var podem ser declaradas de novo e atualizadas. Isso significa que é possível fazer o seguinte dentro do mesmo escopo e não gerar um erro.
+                </p>
+                <div id="a">
+                    <code>
+                        var greeter = "say Hi"; <br>
+                        var greeter = "say Hello instead";
+                    </code>
+                </div>
+                <p>Porém com isso surge um problema com o uso do var.</p>
+                <div id="a">
+                    <code>
+                        var greeter = "say Hi"; <br>
+                        var times = 4; <br>
+                        <br>
+                        if (times > 3) { <br>
+                            var greeter = "say Hello instead"; <br>
+                        }<br>
+                        console.log(greeter) //o resultado será "say Hello instead" e não "say Hi"
+                    </code>
+                </div>
+                <p>
+                    Se você já usou a variavel greeter em outras partes do seu código, pode se surpreender com o resultado que vai obter. Isso provavelmente causará vários bugs no seu código. É por isso que let e const são necessários.
+                </p>
+        </div>
+        <div id="let">
+            <h3>Let</h3>
+                <p>
+                    Foi pensando em trazer a idea do escopo de bloco (tão conhecido em outras linguagens) que surgiu o let. Lembrando que tudo que estiver cercado por chaves {} é um bloco. Assim, uma variável declarada com let em um bloco estará disponível apenas dentro daquele bloco.
+                </p>
+                <div id="a">
+                    <code>
+                        let hello = "say Hi"; <br>
+                        let times = 4; <br> <br>
+
+                        if (times > 3) { <br>
+                            let hello = "say Hello instead"; <br>
+                            console.log(hello);//exibirá "say Hello instead" <br>
+                        } <br>
+                        console.log(hello) //irá exibir "say Hi" e não "say Hello instead"
+                    </code>
+                </div>
+                <p>
+                    Assim como var,  uma variável declarada com let pode ser atualizada dentro de seu escopo. Diferente de var, no entanto, uma variável let não pode ser declarada novamente dentro de seu escopo, apenas em outro escopo como demonstrado no exemplo acima.
+                </p>
+                <p>
+                    Este fato torna o let uma escolha melhor do que var. Ao usar let, você não precisa se preocupar se usou o nome para uma variável antes, já que a variável existe somente dentro daquele escopo.
+                </p>
+        </div>
+        <div id="const">
+            <h3>Const</h3>
+                <p>
+                    Variáveis declaradas com const mantêm valores constantes. Declarações com const compartilham algumas semelhanças com as declarações com let. Assim como declarações com let, declarações com const so podem ser acessadas no bloco em que foram declaradas.
+                </p>
+                <p> <strong>
+                    Isso significa que o valor de uma variável declarada com const se mantém o mesmo dentro do escopo. Ela não pode ser atualizada nem declarada novamente. 
+                    </strong>
+                </p>
+                <div id="a">
+                    <code>
+                        const greeting = "say Hi"; <br>
+                        greeting = "say Hello instead";//erro: atribuição a uma variável constante 
+                    </code>
+                </div>
+                <p>
+                    Cada declaração com const, portanto, deve ser inicializada no momento da declaração. Esse comportamento é bastante diferente quando falamos de objetos declarados com const. Embora um objeto declarado com const não possa ser atualizado, é possível atualizar as propriedades desse objeto.
+                </p>
+                <div id="a">
+                    <code>
+                        //Criando um objeto com const <br>
+                        const greeting; <br>
+                        greeting = { <br>
+                            words: "Hello", <br>
+                            number: "five" <br>
+                        }//erro: atribuição a uma variável constante <br>
+                        <br>
+                        const greeting = { <br>
+                            words: "Hello", <br>
+                            number: "five" <br>
+                        } <br>
+                        greeting.message = "say Hello instead";//exibirá "say Hello instead"
+                    </code>
+                </div>
+        </div>
+        <h2>Resumo</h2>
+        <ul>
+            <li>
+                Variáveis de var podem ser atualizadas e declaradas novamente dentro de seu escopo. As variáveis de let podem ser atualizadas, mas não podem ser declaradas novamente. As variáveis de const não podem ser atualizadas nem declaradas novamente.
+            </li>
+            <li>
+                Todas elas passam por hoisting para o topo de seu escopo. Porém, enquanto variáveis com var são inicializadas com <code>undefined</code>, as variáveis com let e const não são inicializadas.
+            </li>
+            <li>
+                Enquanto var e let podem ser declaradas sem ser inicializadas, const precisa da inicialização durante a declaração.
+            </li>
+        </ul>
+    </section>
+    <footer id="r1">
+        <p>Copyright &copy; 2022 - by <a id="f" href="https://web.facebook.com/Luca.bobbio.1/" target="blank"><b>Luca Bobbio</b></a> | <a id="f" href="https://github.com/LucaBobbioDev" target="blank">GitHub</a></p> 
+    </footer>
+</body>
+</html>

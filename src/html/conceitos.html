@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="img">
+            <img src="../images/jslogo.png" alt="Image with a yellow background-color and the letters J and S" width="90px">
+        </div>
+        <nav id="menu">
+            <strong>
+            <a href="/index.html">Home</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="variaveis.html">Variáveis</a>
+            <a href="dados.html">Dados</a>
+            <a href="operadores.html">Operadores</a>
+            <a href="function.html">Funções</a>
+            <a href="arrays.html">Arrays</a>
+            <a href="dom.html">DOM</a>
+            <a href="frame.html">Frameworks</a>
+            <a href=".sobre.html">Sobre</a>
+            </strong>
+        </nav>
+    </header>
+    <section>
+        <h2>Entendendo conceitos básicos do JavaScript</h2>
+        <p>
+            JavaScript é case-sensitive e usa o conjunto de caracteres Unicode, ou seja, diferencia letras maiusculas de letras minusculas. Ex: NOME e nome são interpretadas como duas coisas diferentes.
+        </p>
+        <div id="a">
+            <code>
+                var nome = "João"; <br>
+                var NOME = "Maria";
+            </code>
+        </div>
+        <p>
+            No JavaScript, instruções são chamadas de declaração e são separadas por um ponto e vírgula (;). Para fazer um comentário em JavaScript deve-se fazer uso do //(para comentários em uma linha) ou /**/(para comentários em multiplas linhas).
+        </p>
+        <h3>Declarações de variaveis:</h3>
+        <p>
+            Variáveis são ferramentas indispensáveis na programação, são nelas que colocamos valores para podermos trabalhar com eles posteriormente, similar à álgebra da matemática. Em JavaScript podemos declarar variáveis, com <b>var</b>, <b>let</b> e <b>const</b>, sendo let a forma mais recomendada. 
+        </p>
+        <p>
+            Uma vez que você declarou uma variável, você pode inicializá-la com um valor. Você faz isso digitando o nome da variável, seguido do sinal de igual (=) e o valor que deseja atribuir a ela. Você pode declarar e inicializar uma variável ao mesmo tempo. Também é possível declarar varias variáveis com a mesma palavra chave. Escopo significa essencialmente onde as variáveis estão disponíveis para uso. Varias declarações têm escopo global ou função/escopo local.
+        </p>
+        <p>
+            <b>Hoisting</b> 
+            é um mecanismo do JavaScript que faz com que as declarações de variáveis e de funções sejam movidas para o topo de seu escopo antes da execução do código. Portanto, se fizermos isso:
+        </p>
+        <div id="a">
+            <code>
+                console.log (greeter); <br>
+                var greeter = "say hello";
+            </code>
+        </div>
+        <p>A interpretação será:</p>
+        <div id="a">
+            <code>
+                var greeter; <br>
+                console.log(greeter); // greeter is undefined <br>
+                greeter = "say hello"
+            </code>
+        </div>
+        <p>
+            Em JavaScript todo texto sem aspas são interpretados como um nome de variável, propriedade do nome, palavra reservada ou algo assim. Já valores numéricos são inseridos sem aspas.
+        </p>
+        <div id="a">
+            <code>
+                var badString = This is a test;//errado<br>
+                var badString = "This is a test";//correto
+            </code>
+        </div>
+        <p>
+            As variáveis em JavaScript são não tipadas. Você pode atribuir um valor de qualquer tipo a uma variável e, posteriormente, atribuir um valor de tipo diferente para a mesma variável.
+        </p>
+        <h3>Conhecendo condicionais no JavaScript:</h3>
+        <p>
+            Em qualquer linguagem de programação, o código precisa tomar decisões e realizar ações de acordo, dependendo de diferentes entradas. Por exemplo, em um aplicativo de clima, se estiver sendo observado pela manhã, ele mostra um gráfico do nascer do sol; Mostra estrelas e uma lua se for noite.
+        </p>
+        <p>
+            O tipo mais comum de declaração condicional que você usará em JavaScript serão as declarações if ... else. Este tipo de código é bem simples de entender. Se a condição for verdadeira, execute o bloco de código A, senão execute o bloco de código B.
+        </p>
+        <div id="a">
+            <code>
+                //Declarando a variável <br>
+			    let num = 10; <br>
+                <br>
+			    /* <br>
+                Criando a condicional, onde se o valor de num for menor que 15, ele irá executar a código onde num recebe ele mesmo multiplicado por 2, senão ele executará o código onde num recebe ele mesmo divido por 2 <br>
+			    */ <br> <br>
+			    if (num < 15) { <br>
+   				    num = num*2; <br>
+ 			    } else { <br>
+   				    num = num/2; <br>
+ 			    }//fim da condicional
+                 <br> <br>
+			    console.log(num);//exibe 20
+            </code>
+        </div>
+        <p>
+            Você precisa saber que não é obrigado a colocar a palavra reservada else e o segundo bloco de par de chaves. Entretanto, você precisa ser cauteloso, pois o segundo bloco de código não é controlado pela declaração condicional, então ele vai executar sempre, independente do teste condicional retornar true ou false. 
+        </p>
+        <div id="a">
+            <code>
+                if (1==1) { <br>
+                    console.log("Olá mundo!") <br>
+                } <br>
+                //exibirá "Olá mundo!"
+            </code>
+        </div>
+        <p>
+            Existe uma maneira de encadear escolhas/resultados extras ao seu if...else — usando <b>else if</b>. Cada escolha extra requer um bloco adicional para colocar entre if( ) { ... } e else { ... }. <br>
+            Exemplo:
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis <br>
+                let booleano = false; <br>
+                let Ola = "Olá mundo!"; <br>
+                let numero = 55; <br>
+                <br>
+                //Criando condicional que faz uso do if...else if <br>
+                if (numero === "78"){ <br>
+                    console.log(Ola); <br>
+                } else if (booleano !== "false"){ <br>
+                    console.log(Ola); <br>
+                } else { <br>
+                    console.log("Não encontrado!"); <br>
+                }//fim do else if <br>
+                <br>
+                //exibirá "Não encontrado!"
+            </code>
+        </div>
+        <p>
+            Se você quiser testar várias condições sem escrever instruções aninhadas if...else, os <b>operadores lógicos</b> poderão ajudá-lo. Você pode combinar tantas instruções lógicas quanto quiser, em qualquer estrutura. 
+        </p>
+        <h3>Operador lógico AND (&&)</h3>
+        <p>
+            Permite encadear duas ou mais expressões para que todas elas tenham que ser avaliadas individualmente como true assim toda a expressão retorna true. <br>
+            <strong>
+                AND somente retorna verdadeiro caso as DUAS premissas sejam verdadeiras.
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                let valor1 = 10; <br>
+                let valor2 = 20; <br>
+                <br>
+                if (valor1 === 10 && valor2 !== 5){ <br>
+                    console.log("As DUAS premissas são verdadeiras!"); <br>
+                } else { <br>
+                    console.log("Alguma das premissas não é verdadeira!") <br>
+                } <br>
+                //exibirá "As DUAS premissas são verdadeiras!"
+            </code>
+        </div>
+        <h3>Operador lógico OR ( || )</h3>
+        <p>
+            Permite encadear duas ou mais expressões para que uma ou mais delas tenham que ser avaliadas individualmente como true assim toda a expressão retorna true. <br>
+            <strong>
+                OR retorna verdadeiro caso alguma das premissas seja verdadeira.
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                let valor1 = 10; <br>
+                let valor2 = 20; <br>
+                <br>
+                if (valor1 > 10 || valor2 === 20){ <br>
+                    console.log("Alguma das premissas é verdadeira!"); <br>
+                } else { <br>
+                    console.log("Nenhuma das premissas são verdadeiras") <br>
+                } <br>
+                //exibirá "Alguma das premissas é verdadeira!"
+            </code>
+        </div>
+        <p>
+            As instruções if...else fazem o trabalho de habilitar o código condicional bem, mas elas também possuem suas desvantagens. Elas são boas principalmente para casos em que você tem algumas opções, e cada uma requer uma quantidade razoável de código para ser executado, e / ou as condições são complexas (por exemplo, vários operadores lógicos).
+        </p>
+        <h3>Sobre o Switch:</h3>
+        <p>
+            A condicional <b>switch</b> avalia uma expressão, combinando o valor da expressão para um cláusula case, e executa as instruções  associadas ao case.
+        
+            Se a condição for correspondida, o programa executa as instruções asssociadas. Se múltiplos casos corresponderem o valor, o primeiro caso que corresponder é selecionado, mesmo se os casos não forem iguais entre si.
+        </p>
+        <p>
+            O programa primeiro procura por um caso o qual a expressão avalie como tendo o mesmo valor que o input da expressão (usando a comparação de igualdade estrita, ===) transferindo assim o controle para a cláusula encontrada e em seguida executando as instruções associadas. Caso nenhum caso seja correspondido, então o programa procura pela cláusula opcional default, que, se encontrado, tem o controle transferido a ele, executando suas instruções associadas. <br>
+            <br>
+            <strong>
+                Exemplo do Switch junto de uma Função:
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                /* Usando o Switch <br>
+                Criando uma função que irá receber um simbolo de moeda e que como parametro retornará o nome da moeda caso conheça aquele simbolo, senão retornar 'moeda não encontrada" <br>
+                */ <br> <br>
+                //Declarando as variáveis <br>
+                let simbolo1 = "R$"; <br>
+                let simbolo2 = "$"; <br>
+                let simbolo3 = "€"; <br>
+                let simbolo4 = "£";
+                <br> <br>
+                function moeda(simbolo){ <br>
+                    //Switch <br>
+                    switch (simbolo) { <br>
+                        case "R$": <br>
+                            console.log("Real"); <br>
+                            break; <br>
+                        case "$": <br>
+                            console.log("Dólar"); <br>
+                            break; <br>
+                        case "€": <br>
+                            console.log("Euro"); <br>
+                            break; <br>
+                        case "£": <br>
+                            console.log("Libra"); <br>
+                            break; <br>
+                        default: <br>
+                            console.log("Moeda não encontrada!") <br>
+                            break; <br>
+                    }//fim do switch <br>
+                }// fim da função moeda <br> <br>
+
+                moeda(simbolo1);//exibirá "Real"
+            </code>
+        </div>
+        <p>
+            Se você esquecer um break então o script irá rodar a partir do caso onde o critério foi correspondido e irá rodar também o caso seguinte independentemente do critério ter sido correspondido ou não
+        </p>
+        <h3>Estruturas de Repetição (Loops) em JavaScript:</h3>
+        <p>
+            Loops são estruturas de repetições que permitem o codigo ser mais dinâmico. Um loop geralmente possui um contador, uma condição de saída do loop e um iterador.
+            <ol>
+                <li><b>Contador</b>: é inicializado com um certo valor - este é o ponto inicial do loop ("Iniciar: não tenho comida").</li>
+                <li><b>Condição de Saída</b>: é o critério no qual o loop para - geralmente o contador atinge um certo valor. Isso é ilustrado por "Tenho comida suficiente?". Vamos dizer que ele precisa de 10 porções de comida para alimentar sua família.</li>
+                <li><b>Iterador</b>: incrementa o contador em uma pequena quantidade a cada loop, sucessivamente, até atingir a condição de saída.</li>
+            </ol>
+        </p>
+        <ul>
+            <li>Break: comando que podemos utilizar quando queremos encerrar o loop na hora. </li>
+            <li>Continue: comando que podemos utilizar para inciar a nova repetição do loop.</li>
+        </ul>
+        <p> 
+            <br>
+            <strong>
+                Tipos de estruturas de repetições: <br>
+            </strong>
+            <strong>For:</strong> determina que uma ação deve ser executada a partir de uma condição inicial até que seja encontrada outra que interrompa o laço. <br>
+            <strong>For Of:</strong> loop especifico para iterar entre os elementos de uma lista. (incluindo Array, Map, Set, o objeto arguments e assim por diante). A cada iteração, um valor de uma propriedade diferente é atribuido à variável. <br>
+            <strong>While:</strong> cria um laço que executa uma rotina especifica enquanto a condição de teste for avaliada como verdadeira. <br>
+            <strong>Do While:</strong> cria um laço que executa uma declaração até que o teste da condição for falsa. A condição é avaliada depois que o bloco de código é executado. <br>
+            <br>
+        </p>
+        <p>
+            <strong>
+                Usando o For:
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                //Declaração das variaveis <br>
+                let c; <br>
+                let c2 = 1; <br>
+                let c3 = 1; <br>
+                <br>
+                for (c = 0; c < 5; c++) { <br>
+                    console.log('Ande um passo para o leste');  //Executa 5 vezes, com os valores de passos de 0 a 4. <br>
+                }
+            </code>
+        </div>
+        <p>
+            <strong>
+                Usando o For Of:
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                //Declarando o Array <br>
+                let dias = ["segunda", "terça", "quarta", "quinta", "sexta", "sábado", "domingo"]; <br> <br>
+                for (let dia of dias) { <br>
+                    console.log(dia); <br>
+                }//fim do for of <br>
+                <br>
+                //irá exibir todos os valores dentro do array dias
+            </code>
+        </div>
+        <p>
+            <strong>
+                Usando o While:
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis <br>
+                let n = 5; <br>
+                const valorLimite = 100; <br>
+                <br>
+                while(n < valorLimite){ <br>
+                    console.log(n); <br>
+                    n = n * 2; <br>
+                } <br>
+                <br>
+                //enquanto o valor de n for menor do que o valor de valorLimite, retorna n vezes 2
+            </code>
+        </div>
+        <p>
+            <strong>
+                Usando o Do While:
+            </strong>
+        </p>
+        <div id="a">
+            <code>
+                //Declarando as variáveis <br>
+                let n = 5; <br>
+                const valorLimite = 100; <br>
+                <br>
+                do { <br>
+                    console.log(n); <br>
+                    n = n * 2; <br>
+                } while (n < valorLimite); <br> <br>
+                //irá retornar valor de n vezes 2 enquanto ele for menor do que o valor de valorLimite
+            </code>
+        </div>
+    </section>
+    <footer id="r1">
+        <p>Copyright &copy; 2022 - by <a id="f" href="https://web.facebook.com/Luca.bobbio.1/" target="blank"><b>Luca Bobbio</b></a> | <a id="f" href="https://github.com/LucaBobbioDev" target="blank">GitHub</a></p> 
+    </footer>
+</body>
+</html>

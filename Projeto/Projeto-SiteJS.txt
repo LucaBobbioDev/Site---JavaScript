@@ -1,0 +1,309 @@
+Objetivo: Criar um site single page 
+Site: Curso Básico de JavaScript
+
+Estilo:
+Cabeçalho: rgb(247, 223, 30);
+Corpo: rgb(20, 20, 20);
+Texto:rgb(250, 250, 250);
+Fonte:normal 15pt Tahoma;
+--------------------------------------------------------------------------------------------------
+Landing Page (home.html):
+O que é JavaScript?
+	Criada em 1995, JavaScript é uma linguagem de script, multiplataforma, com tipagem dinâmica fraca e multiparadigma (protótipos, orientado a objeto, imperativo e, funcional). 
+	O JavaScript permite páginas da Web interativas e, portanto, é uma parte essencial dos aplicativos da web. A grande maioria dos sites usa, e todos os principais navegadores têm um mecanismo JavaScript dedicado para executá-lo. É uma linguagem baseada em ECMAScript, padronizada pela Ecma international nas especificações ECMA-262 e ISO/IEC 16262.
+	Você pode executar códigos em JavaScript do lado do cliente (front end) em um navegador web, dê preferência ao Firefox ou ao Google Chrome. E também poderá executá-lo do lado do servidor (back end) em linha de comando através do Node.js.
+
+JavaScript e Java
+	Embora existam semelhanças entre JavaScript e Java, incluindo o nome da linguagem, a sintaxe e as respectivas bibliotecas padrão, as duas linguagens são distintas e diferem muito no design.
+	Java é uma linguagem de programação baseada em classes, projetada para execução rápida e segurança de tipos. Segurança de tipo significa que, por exemplo, você não pode converter um número inteiro em Java para uma referência de objeto ou acessar a memória privada corrompendo bytecodes Java.
+	JavaScript é uma linguagem mais livre em comparação a Java. Você não tem de declarar os tipo de todas as variáveis, classes e métodos. Você não tem que se preocupar com o fato dos métodos serem públicos, privados ou protegidos, e você não tem que implementar interfaces. Variáveis, parâmetros e tipo de retorno da função não são explicitamente tipados.
+--------------------------------------------------------------------------------------------------
+Conceitos Básicos (conceitos.html):
+Entendendo conceitos básicos do JavaScript
+	JavaScript é case-sensitive e usa o conjunto de caracteres Unicode, ou seja, diferencia letras maiusculas de letras minusculas. Ex: NOME e nome são interpretadas como duas coisas diferentes.
+			var nome = "João";
+			var NOME = "Maria";
+	No JavaScript, instruções são chamadas de declaração e são separadas por um ponto e vírgula (;). Para fazer um comentário em JavaScript deve-se fazer uso do //(para comentários em uma linha) ou /**/(para comentários em multiplas linhas).
+
+Declarações de variaveis:
+	Variáveis são ferramentas indispensáveis na programação, são nelas que colocamos valores para podermos trabalhar com eles posteriormente, similar à álgebra da matemática. 
+	Em JavaScript podemos declarar variáveis, com var, let e const, sendo let a forma mais recomendada. 
+	Uma vez que você declarou uma variável, você pode inicializá-la com um valor. Você faz isso digitando o nome da variável, seguido do sinal de igual (=) e o valor que deseja atribuir a ela. Você pode declarar e inicializar uma variável ao mesmo tempo. Também é possível declarar varias variáveis com a mesma palavra chave. Escopo significa essencialmente onde as variáveis estão disponíveis para uso. Varias declarações têm escopo global ou função/escopo local.
+	Hoisting é um mecanismo do JavaScript que faz com que as declarações de variáveis e de funções sejam movidas para o topo de seu escopo antes da execução do código. Portanto, se fizermos isso:
+			console.log (greeter);
+			var greeter = "say hello"
+A interpretação será:
+
+    			var greeter;
+    			console.log(greeter); // greeter is undefined
+    			greeter = "say hello"
+	Todo texto sem aspas são interpretados como um nome de variável, propriedade do nome, palavra reservada ou algo assim. Já valores numéricos são inseridos sem aspas.
+			var badString = This is a test;//errado
+			var badString = "This is a test";//correto
+	As variáveis em JavaScript são não tipadas. Você pode atribuir um valor de qualquer tipo a uma variável e, posteriormente, atribuir um valor de tipo diferente para a mesma variável.
+
+Conhecendo condicionais no JavaScript:
+	Em qualquer linguagem de programação, o código precisa tomar decisões e realizar ações de acordo, dependendo de diferentes entradas. Por exemplo, em um aplicativo de clima, se estiver sendo observado pela manhã, ele mostra um gráfico do nascer do sol; Mostra estrelas e uma lua se for noite.
+	O tipo mais comum de declaração condicional que você usará em JavaScript serão as declarações if ... else. Este tipo de código é bem simples de entender. Se a condição for verdadeira, execute o bloco de código A, senão execute o bloco de código B.
+			//Declarando a váriavel
+			let num = 10;
+
+			/*Criando a condicional, onde se o valor de num for menor que 15, ele irá executar a código onde num recebe ele mesmo multiplicado por 2, senão ele executará o código onde num recebe ele mesmo divido por 2
+			*/
+			if (num < 15) {
+   				num = num*2;
+ 			} else {
+   				num = num/2;
+ 			}//fim da condicional
+			
+			console.log(num);//exibe 20
+
+Estruturas de Repetição (Loops) em JavaScript:
+	Loops são estruturas de repetições que permitem o codigo ser mais dinâmico. Um loop geralmente possui um contador, uma condição de saída do loop e um iterador.
+<b>Contador</b>: é inicializado com um certo valor - este é o ponto inicial do loop ("Iniciar: não tenho comida").
+<b>Condição de Saída</b>: é o critério no qual o loop para - geralmente o contador atinge um certo valor. Isso é ilustrado por "Tenho comida suficiente?". Vamos dizer que ele precisa de 10 porções de comida para alimentar sua família.
+<b>Iterador</b>: incrementa o contador em uma pequena quantidade a cada loop, sucessivamente, até atingir a condição de saída.
+
+Break: comando que podemos utilizar quando queremos encerrar o loop na hora.
+Continue: comando que podemos utilizar para inciar a nova repetição do loop.
+
+Tipos de estruturas de repetições:
+--------------------------------------------------------------------------------------------------
+Variaveis (variaveis.html)
+Entendendo as diferenças entre var, let e const:
+	Antes do advento do ES6, as declarações de var eram a regra. Entretanto, com o var existiam alguns problemas na hora das definições. Um dos recursos que surgiu com o ES6 foi a adoção de let e const, que podem ser usados para a declaração de variáveis.
+
+Var
+	Declarações com var tem escopo global ou escopo de função/local. Isso significa que qualquer variável que seja declarada com var fora de um bloco de função pode ser utilizada na janela inteira. Tudo o que estiver cercado por chaves é um bloco.
+			//Escopo global
+			var tester = "hey hi";
+    
+			function newFunction() {
+			//Escopo de função
+				var hello = "hello";
+			}
+			console.log(hello); // erro: hello não está definido
+
+	Variáveis de var podem ser declaradas de novo e atualizadas. Isso significa que é possível fazer o seguinte dentro do mesmo escopo e não gerar um erro.
+			var greeter = "say Hi";
+			var greeter = "say Hello instead";
+Porém com isso surge um problema com o uso do var.
+			var greeter = "say Hi";
+    			var times = 4;
+
+    			if (times > 3) {
+				var greeter = "say Hello instead"; 
+    			}
+    			console.log(greeter) //o resultado será "say Hello instead" e não "say Hi"
+	Se você já usou a variavel greeter em outras partes do seu código, pode se surpreender com o resultado que vai obter. Isso provavelmente causará vários bugs no seu código. É por isso que let e const são necessários.
+
+Let
+	Foi pensando em trazer a idea do escopo de bloco (tão conhecido em outras linguagens) que surgiu o let. Lembrando que tudo que estiver cercado por chaves {} é um bloco. Assim, uma variável declarada com let em um bloco estará disponível apenas dentro daquele bloco.
+			let hello = "say Hi";
+			let times = 4;
+
+			if (times > 3) {
+				let hello = "say Hello instead";
+				console.log(hello);//exibirá "say Hello instead"
+			}
+			console.log(hello) //irá exibir "say Hi" e não "say Hello instead"
+	Assim como var,  uma variável declarada com let pode ser atualizada dentro de seu escopo. Diferente de var, no entanto, uma variável let não pode ser declarada novamente dentro de seu escopo, apenas em outro escopo como demonstrado no exemplo acima.
+	Este fato torna o let uma escolha melhor do que var. Ao usar let, você não precisa se preocupar se usou o nome para uma variável antes, já que a variável existe somente dentro daquele escopo.
+
+Const
+	Variáveis declaradas com const mantêm valores constantes. Declarações com const compartilham algumas semelhanças com as declarações com let. Assim como declarações com let, declarações com const so podem ser acessadas no bloco em que foram declaradas.
+	Isso significa que o valor de uma variável declarada com const se mantém o mesmo dentro do escopo. Ela não pode ser atualizada nem declarada novamente. 
+			const greeting = "say Hi";
+			greeting = "say Hello instead";//erro: atribuição a uma variável constante 
+	Cada declaração com const, portanto, deve ser inicializada no momento da declaração. Esse comportamento é bastante diferente quando falamos de objetos declarados com const. Embora um objeto declarado com const não possa ser atualizado, é possível atualizar as propriedades desse objeto.
+			//Criando um objeto com const
+			const greeting;
+			greeting = {
+        			words: "Hello",
+        			number: "five"
+    			}//erro: atribuição a uma variável constante
+
+			const greeting = {
+        			words: "Hello",
+        			number: "five"
+    			}
+			greeting.message = "say Hello instead";//exibirá "say Hello instead"
+Resumo
+	- Variáveis de var podem ser atualizadas e declaradas novamente dentro de seu escopo. As variáveis de let podem ser atualizadas, mas não podem ser declaradas novamente. As variáveis de const não podem ser atualizadas nem declaradas novamente.
+	- Todas elas passam por hoisting para o topo de seu escopo. Porém, enquanto variáveis com var são inicializadas com undefined, as variáveis com let e const não são inicializadas.
+	- Enquanto var e let podem ser declaradas sem ser inicializadas, const precisa da inicialização durante a declaração.
+--------------------------------------------------------------------------------------------------
+Dados (dados.html)
+Tipos de Dados em JavaScript
+	Os tipos em JavaScript podem ser divididos em duas categorias. Os tipos primitivos e os tipos de objeto. Os tipo primitivos incluem números, strings e valores booleanos. Qualquer valor em JavaScript que não seja número, string, booleano, null ou undefined é um objeto.
+
+	-Number: JavaScript não faz distinção entre valores inteiros e valores em ponto flutuante. Todos os números em JavaScript são representados como valores em ponto flutuante
+	-String: São valores do tipo texto. Para incluir uma string literal em um programa JavaScript, basta colocar os caracteres da string dentro de um par combinado de aspas simples ou duplas
+	-Boolean: Possuem dois tipos de valores TRUE e FALSE
+	-Array: Em JavaScript, arrays são um tipo especial de objeto que representam um conjunto ordenado de valores numerados
+	-Null & Undefined: Null é falta de valor (vazio). Undefined é quando tenta acessar uma variavel que não tem valor definido
+	-Object: Um objeto em JavaScript é um conjunto não ordenado de valores nomeados. Existem objetos vazios e objetos com propriedades(variaveis)
+	-Function: Sequencias de operações que irão ser executadas. Para executar uma função é necessário chama-la com parênteses. As funções podem ser vazias ou também receber valores que podem acessar. Return é um comando de uma função onde é retornado um valor.
+
+	Se um programa espera uma string, por exemplo, e você fornece um número, ele converte o número em string automaticamente. Se você usa um valor não booleano onde é esperado um booleano, JavaScript converte adequadamente.
+Para saber qual o tipo exato de uma variavel é necessário usar o operador unário typeof.
+
+			//Declarando as variaveis
+			var nome = "José";
+			var n = 123;
+
+			//Usando operador typeof para saber o tipo de dado
+			typeof "José"; //string
+			typerof 123; //number
+--------------------------------------------------------------------------------------------------
+Operadores (operadores.html)
+Entendendo os operadores em JavaScript
+	O JavaScript possui tanto operadores binários quanto unários e um operador ternário, o operador condicional. Um operador binário exige dois operandos, um antes do operador e outro depois.
+Por exemplo, 3+4 ou x*y.
+	Um operador unário exige um único operando, seja antes ou depois do operador.
+Por exemplo, x++ ou ++x.
+
+Operadores Aritiméticos:
+	Operadores aritméticos tomam valores numéricos (sejam literais ou variáveis) como seus operandos e retornam um único valor númerico. Os operadores aritméticos padrão são os de soma (+), subtração (-), multiplicação (*) e divisão (/).
+			console.log(1/2); //Usando o operador de divisão, o resultado é 0.5
+			console.log(5+5);//Usando o operador de soma, o resultado é 10
+	Em JavaScript para se realizar uma exponenciação se usa (**). Calcula a base elevada á potência do expoente, que é, base expoente.
+<imagem>
+
+Operadores de Incremento e Decremento:
+	O incremento (++) é um operador unário. Adiciona um ao seu operando. Se usado como operador prefixado (++x), retorna o valor de seu operando após a adição. Se usado como operador pósfixado (x++), retorna o valor de seu operando antes da adição. Se x é 3, então ++x define x como 4 e retorna 4, enquanto x++ retorna 3 e, somente então, define x como 4.
+	Já o decremento(--) subtrai um de seu operando. O valor de retorno é análogo àquele do operador de incremento. Se x é 3, então --x define x como 2 e retorna 2, enquanto x-- retorna 3 e, somente então, define x como 2.
+	Há também o operador unário de negação. Ele retorna a negação de seu operando. Se x é 3, então -x retorna -3.
+
+Operadores de Atribuição:
+	Operadores de atribuição são os que atribuem um valor à uma variável. Nós já usamos o básico, =, muitas vezes, simplesmente atribuindo à variável do lado esquerdo o valor indicado do lado direito do operador.
+			var x = 3; // x contém o valor 3
+			var y = 4; // y contém o valor 4
+			x = y; // x agora contém o mesmo valor de y, 4
+	Mas existem alguns tipos mais complexos, que fornecem atalhos úteis para manter seu código mais puro e mais eficiente.
+<imagem>
+
+Operadores de Comparação:
+	Um operador de comparação compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira. Os operandos podem ser numéricos, strings, lógicos ou objetos.
+	Na maioria dos casos, se dois operandos não são do mesmo tipo, o JavaScript tenta convertê-los para um tipo apropriado. Isto geralmente resulta na realização de uma comparação numérica. As únicas exceções a esta regra são os operadores === e o !==, que realizam comparações de igualdade e desigualdade "estritas".
+<imagem>
+
+Operadores de string:
+	Além dos operadores de comparação, que podem ser utilizados em valores string, o operador de concatenação (+) concatena dois valores string, retornando outra string que é a união dos dois operandos.
+			console.log("minha " + "string"); // exibe a string "minha string".
+O operador de atribuição encurtado += também pode ser utilizado para concatenar strings.
+			var minhaString = "alfa";
+			minhaString += "beto"; // É avaliada como "alfabeto" e atribui este valor a variavel minhastring.
+Operadores Logicos:
+	Os operadores lógicos entram quando precisamos realizar operações sobre um ou dois valores booleano (verdadeiro ou falso). Elas podem ser do tipo AND, OR e NOT.
+	O operador lógico NOT (!) retorna true se o valor for false e retorna false se o valor for true, ou seja, vai retornar o valor contrário.
+			let vdd = true;
+			let fls = false;
+
+			console.log(!vdd);//resultado será false
+			console.log(!fls);//resultado será true
+	Quando você aplica o operador ! para um valor que não é booleano, o operador ! primeiro converte o valor em um valor booleano (true ou false) e então negativa ele (torna ele o contrário).
+	O operador AND (&&) recebe dois operandos e retorna verdadeiro se, e somente se ambos os operandos sejam verdadeiros. Retorna falso, caso contrário. 
+			let vdd = true;
+			let fls = false;
+
+			console.log(vdd && fls);//resultado será false
+
+			//atribuindo um novo valor para fls
+			fls = true;
+			console.log(vdd && fls);//agora o resultado será true
+	Já para o operador OR (||) retornar verdadeiro, basta que um dos operandos seja verdadeiro. Ele também retorna verdadeiro caso os dois operandos sejam verdadeiros. Retorna falso, se os dois forem falsos. 
+			let vdd = true;
+			let fls = false;
+
+			console.log(vdd || fls);//resultado será true
+
+			//atribuindo um novo valor para vdd
+			vdd = false;
+			console.log(vdd || fls);//o resultado agora será false
+Operador condicional (ternário):
+	Operador ternário JavaScript é uma contração de um operador de atribuição e duas expressões lógicas. No operador ternário, antes da interrogação (?) deve vir uma expressão lógica. A expressão antes dos dois pontos (:) será o resultado do operador, caso a expressão lógica seja verdadeira. A expressão depois dos dois pontos será o resultado caso ela seja falsa.
+			let precoCompra  = 200;
+			let desconto = 0.1; 
+			let precoFinal = 0; 
+
+			precoFinal = precoCompra>100? precoCompra-(precoCompra*desconto):precoCompra
+			//Se precoCompra for maior que 100 então precoFinal receberá precoCompra alterado com desconto, senão receberá precoCompra com valor inalterado
+			
+Operadores relacionais:
+	Um operador relacional compara seus operando e retorna um valor booleano baseado em se a comparação é verdadeira. O operador in é usado para definir se um objeto tem uma determinada propriedade. Ele retorna os valores true ou false.
+			//Arrays
+			let num = [1, 2, 3, 4, 5];
+
+			//Usando o operador in
+			1 in num // retorna true. 
+	Na expressão acima, o JavaScript retornará verdadeiro, pois 1 pertence ao array num. Porém se fosse 6 in num, ele retornaria false.
+----------------------------------------------------------------------------------------------------
+Funções (function.html)
+Conhecendo e entendendo Funções em JavaScript
+	Funções são blocos de construção fundamentais em JavaScript. Uma função é um procedimento de JavaScript — um conjunto de instruções que executa uma tarefa ou calcula um valor. Para usar uma função, você deve defini-la em algum lugar no escopo do qual você quiser chamá-la.
+	Funções em Javascript são conhecidas como objetos de primeira classe (first-class objects). Isso porque tudo o que você pode fazer com um objeto, você pode fazer com funções. Na realidade uma função é um objeto do tipo Function.
+	A definição da função (também chamada de declaração de função) consiste no uso da palavra chave function, seguida por:
+- Nome da Função;
+- Lista de argumentos para a função, entre parênteses e separados por vírgulas;
+- Declarações JavaScript que definem a função, entre chaves { }.
+
+			//Definindo uma função que recebe e retorna um number
+			function myFunction(numero){
+				return numero*numero;
+			}
+
+			console.log(myFunction(4));//irá exibir 16 como resultado
+	Para retornar um valor diferente do padrão, uma função deve ter uma instrução return que específica o valor a ser retornado. Uma função sem um return retornará um valor padrão. Contudo, referência de objetos são valores também, e eles são especiais: se a função muda as propriedades do objeto referenciado, estas mudanças são visíveis fora da função.
+
+	Funções podem ser Globais ou pertencer a um Escopo, e por serem de objetos de primeira classe podem ser passadas por parâmetro ou retornadas por outra função/método.
+
+	Os parâmetros de uma função são chamados de argumentos da função. Argumentos são passados para a função por valor. Se uma função muda o valor de um argumento, esta mudança não é refletida globalmente ou na chamada da função.
+
+Expressão de função:
+	As funções também podem ser criadas por uma expressão de função. Tal função pode ser anônima; ele não tem que ter um nome.
+Exemplo:
+			let square = function(numero) {return numero * numero};
+			let x = square(4)
+
+			console.log(x)//exibirá o número 16
+
+			typeof square//Ao usar o typeof em square, é dito que seu tipo é function
+As expressões de função são convenientes ao passar uma função como um argumento para outra função.
+
+Passadas como parâmetros para outras funções:
+			function myFunction(param){
+
+			}//definindo a função
+
+			//invocando a função e passando como parâmetro outra função
+			myFunction(function(){ console.log("função como parâmetro") })
+----------------------------------------------------------------------------------------------------
+Arrays (arrays.html)
+Conhecendo e entendendo Arrays em JavaScript
+
+----------------------------------------------------------------------------------------------------
+DOM (dom.html)
+Entendendo o DOM
+	DOM é um acrônimo para "Document Object Model", que é um modelo de objeto para documentos. Basicamente é um conjunto de objetos dentro do navegador que vai dar acesso aos componentes internos do site. O DOM não funciona dentro do Node.js, mas sim dentro do navegador.
+	Tudo em JavaScript está dentro de um objeto chamado window. A window (janela) do navegador é um objeto DOM. Dentro desse window há vários outros objetos. Por conta disso essa window também é chamada de "Árvore DOM", esta árvore é hierárquica, onde quem está localizado acima é chamado de "Parent" e quem está localizado abaixo é "Child".
+	Os eventos em DOM são qualquer coisa que pode acontecer dentro dos objetos do DOM. A manipulação de eventos se dá do uso de funções em JavaScript. A função irá ser acionada quando o evento ocorrer.
+----------------------------------------------------------------------------------------------------
+Frameworks (framewk.html)
+Conhecendo os Frameworks de JavaScript
+
+----------------------------------------------------------------------------------------------------
+Sobre (sobre.html)
+Sobre o site
+	Esse site foi feito como uma forma de colocar meus estudos em HMTL, CSS e JavaScript em prática. Além de resumir os principais conceitos em Javascript para aqueles que estão inciando na apredizagem dessa linguagem de programação tão famosa e importante.
+	Durante a criação desse site eu pesquisei a respeito de javascript e procurei fazer breves resumos dos conceitos mais fundamentais da linguagem.
+
+Tecnlogias usadas no site
+HTML, CSS, JavaScript e Visual Studio Code
+
+Fontes de onde foram retiradas as informações presentes nesse site:
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript 
+
+http://devfuria.com.br/javascript/
+
+https://www.devmedia.com.br/javascript/

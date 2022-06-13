@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div id="img">
+            <img src="../images/jslogo.png" alt="Image with a yellow background-color and the letters J and S" width="90px">
+        </div>
+        <nav id="menu">
+            <strong>
+            <a href="/index.html">Home</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="variaveis.html">Variáveis</a>
+            <a href="dados.html">Dados</a>
+            <a href="operadores.html">Operadores</a>
+            <a href="function.html">Funções</a>
+            <a href="arrays.html">Arrays</a>
+            <a href="dom.html">DOM</a>
+            <a href="frame.html">Frameworks</a>
+            <a href="sobre.html">Sobre</a>
+            </strong>
+        </nav>
+    </header>
+    <section>
+        <h2>Conhecendo e entendendo Funções em JavaScript</h2>
+        <p>
+            Funções são blocos de construção fundamentais em JavaScript. Uma função é um procedimento de JavaScript — um conjunto de instruções que executa uma tarefa ou calcula um valor. Para usar uma função, você deve defini-la em algum lugar no escopo do qual você quiser chamá-la.
+            <p>
+                Funções em Javascript são conhecidas como objetos de primeira classe <b>(first-class objects)</b>. Isso porque tudo o que você pode fazer com um objeto, você pode fazer com funções. Na realidade uma função é um objeto do tipo <b>Function</b>. 
+            <br> <br>
+            A definição da função (também chamada de declaração de função) consiste no uso da palavra chave function, seguida por: <br>
+            - Nome da Função; <br>
+            - Lista de argumentos para a função, entre parênteses e separados por vírgulas; <br>
+            - Declarações JavaScript que definem a função, entre chaves { }.
+        </p>
+        <div id="a">
+            <code>
+                //Definindo uma função que recebe e retorna um number <br>
+                function myFunction(numero){ <br>
+                    return numero*numero; <br>
+                } <br> <br>
+                console.log(myFunction(4));//irá exibir 16 como resultado
+            </code>
+        </div>
+        <p>
+            Para retornar um valor diferente do padrão, uma função deve ter uma instrução return que específica o valor a ser retornado. Uma função sem um return retornará um valor padrão. Contudo, referência de objetos são valores também, e eles são especiais: se a função muda as propriedades do objeto referenciado, estas mudanças são visíveis fora da função.
+        </p>
+        <p>
+            Funções podem ser Globais ou pertencer a um Escopo, e por serem de objetos de primeira classe podem ser passadas por parâmetro ou retornadas por outra função/método.
+        </p>
+        <p>
+            Os parâmetros de uma função são chamados de argumentos da função. Argumentos são passados para a função por valor. Se uma função muda o valor de um argumento, esta mudança não é refletida globalmente ou na chamada da função. 
+        </p>
+        <h3>Expressão de função:</h3>
+        <p>
+            As funções também podem ser criadas por uma expressão de função. Tal função pode ser anônima; ele não tem que ter um nome. <br>
+            Exemplo:
+        </p>
+        <div id="a">
+            <code>
+                let square = function(numero) {return numero * numero}; <br>
+                let x = square(4)<br>
+                <br>
+                console.log(x)//exibirá o número 16 <br>
+                <br>
+                typeof square//Ao usar o typeof em square, é dito que seu tipo é function
+            </code>
+        </div>
+        <p>
+            As expressões de função são convenientes ao passar uma função como um argumento para outra função.
+        </p>
+        <p>
+            <b>
+            Passadas como parâmetros para outras funções:
+            </b>
+        </p>
+        <div id="a">
+            <code>
+                function myFunction(param){
+                    <br> <br>
+                }//definindo a função
+                <br> <br>
+                //invocando a função e passando como parâmetro outra função <br>
+                myFunction(function(){ console.log("função como parâmetro") })
+            </code>
+        </div>
+    </section>
+    <footer id="r1">
+        <p>Copyright &copy; 2022 - by <a id="f" href="https://web.facebook.com/Luca.bobbio.1/" target="blank"><b>Luca Bobbio</b></a> | <a id="f" href="https://github.com/LucaBobbioDev" target="blank">GitHub</a></p> 
+    </footer>
+</body>
+</html>
